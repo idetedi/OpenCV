@@ -30,6 +30,6 @@ if max_val >= threshold:
 
     # cv.imshow('Result', hystack_img)
     # cv.waitKey()
-    cv.imwrite('img/result.png', hystack_img)
+    cv.imwrite('01/img/result.png', hystack_img)
 else:
     print('Poppy not found.')
