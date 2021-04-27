@@ -1,5 +1,5 @@
 import cv2 as cv
-import numphy as np
+import os
 
 # Capture
 hystack_img = cv.imread('img/Minecraft.png', cv.IMREAD_UNCHANGED)
@@ -30,6 +30,7 @@ if max_val >= threshold:
 
     # cv.imshow('Result', hystack_img)
     # cv.waitKey()
-    cv.imwrite('01/img/result.png', hystack_img)
+    path = 'E:/Proyectos/Python/Test/OpenCV/01/img'
+    cv.imwrite(os.path.join(path, 'result.png'), hystack_img)
 else:
     print('Poppy not found.')
