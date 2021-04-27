@@ -5,7 +5,7 @@ import os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
-def findClickPositions(poppy_img_path, minecraft_img_path, threshold=0.1, debug_mode=None):
+def findClickPositions(poppy_img_path, minecraft_img_path, threshold=0.2, debug_mode=None):
     haystack_img = cv.imread(minecraft_img_path, cv.IMREAD_UNCHANGED)
     poppy_img = cv.imread(poppy_img_path, cv.IMREAD_UNCHANGED)
 
