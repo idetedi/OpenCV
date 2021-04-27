@@ -21,9 +21,6 @@ def findClickPositions(poppy_img_path, minecraft_img_path, threshold=0.1, debug_
     locations = list(zip(*locations[::-1]))
     # print(locations)
 
-    # You'll notice a lot of overlapping rectangles get drawn. We can eliminate those redundant
-    # locations by using groupRectangles().
-    # First we need to create the list of [x, y, w, h] rectangles
     rectangles = []
     for loc in locations:
         rect = [int(loc[0]), int(loc[1]), poppy_w, poppy_h]
