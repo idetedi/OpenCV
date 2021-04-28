@@ -13,24 +13,33 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 # list_windows_names()
 
 # initialize the WindowCapture class
+WindowCapture
 wincap = WindowCapture('Minecraft 1.16.5 - Singleplayer')
 
+go = True
 loop_time = time()
-while True:
+while go:
 
-    # get an updated image of the game
-    screenshot = wincap.get_screenshot()
+    if wincap is not None:
+        # get an updated image of the game
+        screenshot = wincap.get_screenshot()
 
-    cv.imshow('Computer Vision', screenshot)
+        cv.imshow('Computer Vision', screenshot)
 
-    # debug the loop rate
-    print('FPS {}'.format(1 / (time() - loop_time)))
-    loop_time = time()
+        # debug the loop rate
+        print('FPS {}'.format(1 / (time() - loop_time)))
+        loop_time = time()
 
-    # press 'q' with the output window focused to exit.
-    # waits 1 ms every loop to process key presses
-    if cv.waitKey(1) == ord('q'):
-        cv.destroyAllWindows()
-        break
+        # press 'q' with the output window focused to exit.
+        if cv.waitKey(1) == ord('q'):
+            cv.destroyAllWindows()
+            break
+    else:
+        print('Minecraft "Minecraft 1.16.5 - Singleplayer" not found')
+        go = False
 
-print('Done.')
+if go:
+    print("ok")
+    exit(0)
+else:
+    exit(1)
